@@ -33,13 +33,14 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>")
 
 -- keymaps
-vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>=", vim.lsp.buf.format, { desc = "Format with null-ls" })  -- requires null-ls
+vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true, desc = "Write buffer" })
+vim.keymap.set("n", "<leader>=", vim.lsp.buf.format, { noremap = true, desc = "Format with null-ls" })  -- requires null-ls
+vim.keymap.set("n", "<leader>a", "ggVG", { noremap = true, desc = "Select all" })
 
 -- disable mouse and arrows
 vim.opt.mouse = "" -- disable mouse
 for _, key in ipairs({"<Up>", "<Down>", "<Left>", "<Right>"}) do
-    vim.keymap.set("n", key, "<Nop>", {noremap = true})
+    vim.keymap.set("n", key, "<Nop>", { noremap = true })
     -- vim.keymap.set('i', key, '<Nop>', { noremap = true })
     -- vim.keymap.set('c', key, '<Nop>', { noremap = true })
 end
@@ -268,11 +269,6 @@ require("lazy").setup(
 				})
 			end,
 		},
-		-- TODO: add support for pasting from Windows
-		-- TODO: https://github.com/tpope/vim-fugitive
-		-- TODO: copilot completion
-		-- TODO: workspace view
-		-- TODO: python dab
 		-- info, warning and error display
 		{
 			"folke/trouble.nvim",
@@ -280,6 +276,7 @@ require("lazy").setup(
 			cmd = "Trouble",
 			keys = { 
 				{ "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+				{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
 			},
 		},
 		-- status and buffer lines
@@ -307,6 +304,12 @@ require("lazy").setup(
 				size = 10,
 				open_mapping = "<C-t>",
 			},
+		},
+		-- git 
+		{
+			"tpope/vim-fugitive",
+			version = "*",
+			event = "VeryLazy", 
 		},
     }
 )
