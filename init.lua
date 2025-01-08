@@ -178,17 +178,25 @@ require("lazy").setup(
 					indent = { 
 						enable = true,
 					},
-					incremental_selection = {
-						enable = true,
-						keymaps = {
-							init_selection = "<C-n>",
-							node_incremental = "<C-n>",
-							scope_incremental = "<C-s>",
-							node_decremental = "<C-m>",
-						}
-					}
+					-- incremental_selection = {
+					-- 	enable = true,
+					-- 	keymaps = {
+					-- 		init_selection = "<C-n>",
+					-- 		node_incremental = "<C-n>",
+					-- 		scope_incremental = "<C-s>",
+					-- 		node_decremental = "<C-m>",
+					-- 	}
+					-- }
 				})
 			end
+		},
+		{
+			"sustech-data/wildfire.nvim",  -- better incremental selection
+			event = "VeryLazy",
+			dependencies = { "nvim-treesitter/nvim-treesitter" },
+			config = function()
+				require("wildfire").setup()
+			end,
 		},
 		-- telescope (requires ripgrep and fd)
 		{ 
@@ -269,6 +277,15 @@ require("lazy").setup(
 				})
 			end,
 		},
+		-- comments
+		{
+			"numToStr/Comment.nvim",
+			opts = {
+				ignore = "^$",  -- ignore empty lines
+				toggler = { line = "<leader>/" },
+				opleader = { line = "<leader>/" },
+			},
+		},
 		-- info, warning and error display
 		{
 			"folke/trouble.nvim",
@@ -298,7 +315,7 @@ require("lazy").setup(
 		-- terminal
 		{ 
 			"akinsho/toggleterm.nvim", 
-			version = "*",
+			version = "*",	
 			event = "VeryLazy", 
 			opts = {
 				size = 10,
@@ -311,6 +328,23 @@ require("lazy").setup(
 			version = "*",
 			event = "VeryLazy", 
 		},
+		-- docstrings
+		{
+			"kkoomen/vim-doge",  -- must run ":call doge#install()" to finalize installation
+			config = function()
+				vim.g.doge_doc_standard_python = "numpy"
+				vim.g.doge_python_settings = {
+					single_quotes = 0,
+					omit_redundant_param_types = 0,
+				}
+			end,
+		},
+		-- TODO: workspace view plugin
+		-- TODO: LSP keys: go to definition, rename, etc. (where have I seen them?)  /nvim-treesitter/nvim-treesitter-textobjects
+		-- TODO: python dab
+		-- TODO: copilot completion
+		-- TODO: undo tree plugin
+		-- TODO: add support for pasting from Windows
     }
 )
 
