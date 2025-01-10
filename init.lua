@@ -83,6 +83,18 @@ require("lazy").setup(
 				})
             end
         },
+		{
+			"ray-x/lsp_signature.nvim",  -- simpler alternative "hrsh7th/cmp-nvim-lsp-signature-help"
+			event = "InsertEnter",
+			opts = function()
+				require("lsp_signature").on_attach({
+					max_width = 88,
+					wrap = false,
+					hint_enable = false,
+					timer_interval = 400,
+				})
+			end,
+		},
         -- code completion
         {
             "hrsh7th/nvim-cmp",
@@ -178,15 +190,6 @@ require("lazy").setup(
 					indent = { 
 						enable = true,
 					},
-					-- incremental_selection = {
-					-- 	enable = true,
-					-- 	keymaps = {
-					-- 		init_selection = "<C-n>",
-					-- 		node_incremental = "<C-n>",
-					-- 		scope_incremental = "<C-s>",
-					-- 		node_decremental = "<C-m>",
-					-- 	}
-					-- }
 				})
 			end
 		},
@@ -345,6 +348,7 @@ require("lazy").setup(
 		-- TODO: copilot completion
 		-- TODO: undo tree plugin
 		-- TODO: add support for pasting from Windows
+		-- TODO: command for folding all files, e.g., :Fold level1 + shortcut for unfolding all and parts https://github.com/kevinhwang91/nvim-ufo
     }
 )
 
