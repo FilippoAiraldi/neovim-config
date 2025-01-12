@@ -1,0 +1,8 @@
+[] workspace view plugin
+[] LSP keys: go to definition, rename, code actions, etc. (where have I seen them?)  /nvim-treesitter/nvim-treesitter-textobjects
+[] python dab
+[] copilot completion
+[] undo tree plugin
+[] harpoon
+[] add support for pasting from Windows
+[] command for folding all files, e.g., :Fold level1 + shortcut for unfolding all and parts https://github.com/kevinhwang91/nvim-ufo
