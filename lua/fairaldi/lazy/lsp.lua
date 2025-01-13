@@ -5,22 +5,10 @@ return {
 			-- LSPs
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-			-- formatting
-			"stevearc/conform.nvim",
 			-- UI
 			"j-hui/fidget.nvim",
         },
         config = function()
-			require("conform").setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-					python = { 
-						"ruff_fix", 
-						"ruff_format", 
-						"ruff_organize_imports",
-					},
-				}
-			})
 			require("fidget").setup({})
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
