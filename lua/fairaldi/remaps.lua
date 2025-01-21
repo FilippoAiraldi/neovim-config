@@ -21,10 +21,10 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d", { desc = "Deleting to void reg
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format file" })
 
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Quickfix: go to next entry" })
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Quickfix: go to previous entry" })
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Location List: go to next entry" })  -- ?
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Location list: go to previous entry" })  -- ?
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "Quickfix: go to previous entry" })
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "Quickfix: go to next entry" })
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "Location list: go to previous entry" })  -- ?
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "Location List: go to next entry" })  -- ?
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
