@@ -7,7 +7,7 @@ return {
         end,
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "vimdoc", "lua", "python", "bash" },
+                ensure_installed = { "vimdoc", "lua", "python", "bash", "c" },
                 auto_install = false,
                 highlight = {
                     enable = true,
