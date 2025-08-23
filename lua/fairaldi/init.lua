@@ -4,13 +4,6 @@ require("fairaldi.lazy_init")
 
 local FairaldiGroup = vim.api.nvim_create_augroup("Fairaldi", {})
 
-vim.api.nvim_create_autocmd("BufEnter", {
-    group = FairaldiGroup,
-    callback = function()
-        vim.cmd.colorscheme("rose-pine-moon")
-    end
-})
-
 vim.api.nvim_create_autocmd("BufWritePre", { -- remove trailing whitespaces
     group = FairaldiGroup,
     pattern = "*",
