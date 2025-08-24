@@ -16,7 +16,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-                    "pyright",
+                    "basedpyright",
                     "ruff",
 				},
 				handlers = {
@@ -24,6 +24,9 @@ return {
 						require("lspconfig")[server_name].setup {
 							capabilities = capabilities,
 						}
+					end,
+					["basedpyright"] = function()
+						vim.lsp.enable("basedpyright")
 					end,
 					["lua_ls"] = function()
 						local lspconfig = require("lspconfig")
