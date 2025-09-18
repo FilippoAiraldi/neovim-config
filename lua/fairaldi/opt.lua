@@ -10,7 +10,7 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "88"
+vim.opt.colorcolumn = "88,100"
 
 -- FOR UNDOTREE
 -- vim.opt.swapfile = false
