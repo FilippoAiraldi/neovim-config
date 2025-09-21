@@ -12,11 +12,9 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "88,100"
 
--- FOR UNDOTREE
--- vim.opt.swapfile = false
--- vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- vim.opt.undofile = true
+vim.opt.swapfile = false
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
+vim.opt.undofile = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
