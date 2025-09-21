@@ -23,12 +23,16 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format file" })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "Quickfix: go to previous entry" })
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "Quickfix: go to next entry" })
-vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "Location list: go to previous entry" })  -- ?
-vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "Location List: go to next entry" })  -- ?
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "Location list: go to previous entry" })
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "Location List: go to next entry" })
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>a", "ggVG", { desc = "Select all" })
+vim.keymap.set("n", "<leader>a", function()
+    vim.fn.setpos("''", vim.fn.getpos('.'))
+    vim.cmd('keepjumps normal! ggVG')
+end
+, { desc = "Select all" })
 
 -- keymaps
 -- vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true, desc = "Write buffer" })

@@ -25,9 +25,9 @@ return {
 							capabilities = capabilities,
 						}
 					end,
-					["basedpyright"] = function()
-						vim.lsp.enable("basedpyright")
-					end,
+					-- ["basedpyright"] = function()
+					-- 	vim.lsp.enable("basedpyright")
+					-- end,
 					["lua_ls"] = function()
 						local lspconfig = require("lspconfig")
 						lspconfig.lua_ls.setup {
