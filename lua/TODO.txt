@@ -1,5 +1,4 @@
 [] workspace view plugin
-[] LSP keys: go to definition, rename, code actions, etc. (where have I seen them?)  /nvim-treesitter/nvim-treesitter-textobjects
 [] python dab
 [] copilot completion
 [] harpoon
