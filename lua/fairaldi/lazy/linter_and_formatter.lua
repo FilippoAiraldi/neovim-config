@@ -19,6 +19,7 @@ return {
 					"ruff_format",
 					"ruff_organize_imports",
 				},
+                c = { "clang-format" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",

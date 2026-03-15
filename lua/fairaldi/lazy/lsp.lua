@@ -18,6 +18,8 @@ return {
 					"lua_ls",
                     "basedpyright",
                     "ruff",
+                    "cmake",
+                    "clangd",
 				},
 				handlers = {
 					function(server_name) -- default handler
