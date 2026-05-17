@@ -26,7 +26,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "Quickfix: go to next 
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "Location list: go to previous entry" })
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "Location List: go to next entry" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and replace word under cursor" })
 
 vim.keymap.set("n", "<leader>a", function()
     vim.fn.setpos("''", vim.fn.getpos('.'))
